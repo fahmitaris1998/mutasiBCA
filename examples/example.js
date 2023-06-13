@@ -28,7 +28,7 @@ const job = schedule.scheduleJob('*/5 * * * *', async()=>{
   var tgl = datetime.toISOString().slice(8,10);
   var bln = datetime.toISOString().slice(6,7);
 
-  var result = await scraper.getSettlement("12", "6", "12", "6");
+  var result = await scraper.getSettlement("13", "6", "13", "6");
   console.log(result);
 
 });
