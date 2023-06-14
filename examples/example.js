@@ -22,13 +22,12 @@ const job = schedule.scheduleJob('*/1 * * * *', async()=>{
   });
 
   console.log("MONTHNYA NI GAES");
-  var datetime = new Date();
-  console.log(datetime.toISOString().slice(9,10));
-  console.log(datetime.toISOString().slice(6,7));
-  var tgl = datetime.toISOString().slice(8,10);
-  var bln = datetime.toISOString().slice(6,7);
+  const date = new Date();
+  let day = date.getDate();
+  let month = date.getMonth()+1;
+  console.log(date);
 
-  var result = await scraper.getSettlement("13", "6", "13", "6");
+  var result = await scraper.getSettlement(day, month, day, month);
   console.log(result);
 
 });
